@@ -23,13 +23,11 @@
 
 QList<KCPanel *> Housing::panels()
 {
-    qDebug("giving panels");
     return QList<KCPanel *>();
 }
 
 QList<KCSummaryView *> Housing::summaryView()
 {
-    qDebug("giving summaryviews");
     return QList<KCSummaryView *>();
 }
 
