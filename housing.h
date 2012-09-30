@@ -24,8 +24,11 @@
 
 #include <interfaces.h>
 
-class Housing : public KCPlugin
+class Housing : public QObject, public KCPlugin
 {
+    Q_OBJECT
+    Q_INTERFACES(KCPlugin)
+
 public:
     QList<KCPanel *> panels();
     QList<KCSummaryView *> summaryView();
