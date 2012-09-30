@@ -28,7 +28,6 @@ Meal::Meal(QWidget *parent) :
 
 void Meal::buildGUI(const QString& connection)
 {
-
 }
 
 void Meal::initDB(const QString& connection)
@@ -38,17 +37,19 @@ void Meal::initDB(const QString& connection)
 
 QWidget* Meal::panel()
 {
-
+    return this;
 }
 
 const QString& Meal::title()
 {
-
+    static QString s = tr("Meal management");
+    return s;
 }
 
 const QString& Meal::iconPath()
 {
-
+    static QString s(":/meals");
+    return s;
 }
 
 void Meal::selectPanel()

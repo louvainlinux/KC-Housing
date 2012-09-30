@@ -20,10 +20,11 @@
  **/
 
 #include "housing.h"
+#include "meal.h"
 
 QList<KCPanel *> Housing::panels()
 {
-    return QList<KCPanel *>();
+    return QList<KCPanel *>() << new Meal();
 }
 
 QList<KCSummaryView *> Housing::summaryView()

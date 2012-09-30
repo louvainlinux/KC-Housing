@@ -28,6 +28,8 @@
 class Meal : public QWidget, public KCPanel
 {
     Q_OBJECT
+    Q_INTERFACES(KCPanel)
+
 public:
     explicit Meal(QWidget *parent = 0);
     void buildGUI(const QString& connection);
@@ -41,6 +43,8 @@ signals:
 
 public slots:
 
+private:
+    QString connection;
 };
 
 #endif // MEAL_H
