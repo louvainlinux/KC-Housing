@@ -20,6 +20,8 @@
  **/
 
 #include "meal.h"
+#include <QtSql/QSqlQuery>
+#include <QtSql/QSqlDatabase>
 
 Meal::Meal(QWidget *parent) :
     QWidget(parent)
@@ -32,7 +34,17 @@ void Meal::buildGUI(const QString& connection)
 
 void Meal::initDB(const QString& connection)
 {
-
+    QSqlQuery query(QSqlDatabase::database(connection));
+    query.exec("CREATE TABLE meals (id INTEGER PRIMARY KEY, "
+               "date TEXT)");
+    query.exec("INSERT INTO expenses(name, hidden) VALUES('"+tr("Meals")+"', 1)");
+    query.exec("CREATE TABLE meals_subscription (id INTEGER PRIMARY KEY, "
+               "personid INTEGER REFERENCES person(id) "
+               "ON UPDATE CASCADE ON DELETE SET NULL, "
+               "cross INTEGER)");
+    query.exec("CREATE TABLE meals_ticket (id INTEGER PRIMARY KEY, "
+               "ticketid INTEGER REFERENCES tickets(id) "
+               "ON UPDATE CASCADE ON DELETE DELETE)");
 }
 
 QWidget* Meal::panel()

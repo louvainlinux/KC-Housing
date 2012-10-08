@@ -1,3 +1,4 @@
+QT           += core gui sql
 TEMPLATE      = lib
 CONFIG       += plugin
 INCLUDEPATH  += ../KapCompta
