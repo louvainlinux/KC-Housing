@@ -38,6 +38,8 @@ public:
     const QString& title();
     const QString& iconPath();
     void selectPanel();
+    void unselectPanel() {}
+    void saveAll() {}
 
 signals:
 
