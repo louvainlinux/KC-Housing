@@ -32,6 +32,10 @@ class Housing : public QObject, public KCPlugin
 public:
     QList<KCPanel *> panels();
     QList<KCSummaryView *> summaryView();
+    void setDBHelper(KCDataBaseHelper *helper);
+
+private:
+    KCDataBaseHelper *helper;
 };
 
 #endif // HOUSING_H

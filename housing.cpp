@@ -32,4 +32,9 @@ QList<KCSummaryView *> Housing::summaryView()
     return QList<KCSummaryView *>();
 }
 
+void Housing::setDBHelper(KCDataBaseHelper *helper)
+{
+    this->helper = helper;
+}
+
 Q_EXPORT_PLUGIN2(kc_housing, Housing)
